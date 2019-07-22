@@ -1,0 +1,21 @@
+<app-header [pageTitle]="title"></app-header>
+
+<button (click)="sendNews()">sendnews</button>
+<div class="left-panel">
+<h3>Employee</h3>
+<ul>
+  <li *ngFor="let user of users;"><div><span (click)= "userInfo(user)">{{user.name}}</span><span><button (click)="userDel(user)">x</button></span></div></li>
+</ul>
+</div>
+<div class="center-panel">
+<table><th>tasks</th><th>action</th>
+  <tr *ngFor="let task of selectedUser.tasks"><td>{{task.desc}}</td><td><button (click)= "delTask(task)">delete</button></td></tr>
+  <tr><td>
+    <div>
+      <form #taskForm="ngForm" >
+        <input type="text" name="taskName" #taskName required/>
+      <button (click)="addTask(taskName.value)" [disabled]="!taskForm.valid">{{taskName.valid}}Add</button>
+    </form>
+      </div><td></tr>
+</table>
+</div>

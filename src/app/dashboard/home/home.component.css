@@ -1,0 +1,11 @@
+.left-panel {
+  width: 200px;
+  border-right: 1px solid black;
+  display: inline-block;
+}
+
+.center-panel {
+  width: 500px;
+  border-right: 1px solid black;
+display: inline-block;
+}
