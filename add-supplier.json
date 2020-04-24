@@ -1,0 +1,533 @@
+{
+  "formCards": [
+    {
+      "cardLabel": "Basic Details",
+      "cardSubLabel" : "BASIC DETAILS",
+      "cardName": "basicDetails",
+      "cardFormType": "Basic",
+      "cardFormValue": "Plain",
+      "crossRefered": true,
+      "cardContent": [
+        {
+          "type": "input",
+          "label": "supplierID",
+          "name": "supplierID",
+          "isvisible": false
+        },
+        {
+          "type": "input",
+          "label": "Supplier Legal Name",
+          "name": "supplierLegalName",
+          "isvisible": true,
+          "events": [
+            {
+              "eventName": "keyup",
+              "eventFunction": "InputKeyUp"
+            }
+          ],
+          "validators": [
+            {
+              "validator": "required",
+              "errorMsg": "Required",
+              "isAsync": false
+            },
+            {
+              "validator": "minlength",
+              "errorMsg": "Must be minimum 3 characters long",
+              "parameters": 3,
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Parent Company",
+          "name": "parentCompany",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Doing Business As",
+          "name": "doingBusinessAs",
+          "isvisible": true
+        },
+        {
+          "type": "select",
+          "label": "Business type",
+          "name": "businessType",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Formerly Known As",
+          "name": "formerlyKnownAs",
+          "isvisible": true
+        },
+        {
+          "type": "select",
+          "label": "Ownership type",
+          "name": "ownershipType",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "optionRequired",
+              "errorMsg": "Required",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Annual Revenue",
+          "name": "annualRevenue",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "pattern",
+              "errorMsg": "Must be numeric value",
+              "parameters": "^[0-9]*$",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "SupplierStatus",
+          "name": "supplierStatus",
+          "isvisible": true
+        },
+        {
+          "type": "multiselect",
+          "label": "Category",
+          "name": "categories",
+          "isvisible": true
+        },
+        {
+          "type": "multiselect",
+          "label": "Region",
+          "name": "regions",
+          "isvisible": true
+        },
+
+        {
+          "type": "select",
+          "label": "Relation Type",
+          "name": "relationType",
+          "isvisible": true
+        },
+        {
+          "type": "select",
+          "label": "Business Criticality",
+          "name": "businessCriticality",
+          "isvisible": true
+        },
+        {
+          "type": "select",
+          "label": "Risk Type",
+          "name": "riskType",
+          "isvisible": true
+        },
+        {
+          "type": "multiselect",
+          "label": "Organization Entity",
+          "name": "organizationEntities",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Number of Employees",
+          "name": "numberofEmployees",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "pattern",
+              "errorMsg": "Must be numeric value",
+              "Parameters": "^[0-9]*$",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Year Of Incorporation",
+          "name": "yearOfIncorporation",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "pattern",
+              "errorMsg": "Must be numeric value",
+              "Parameters": "^[0-9]*$",
+              "isAsync": false
+            }
+          ]
+        }
+      ],
+      "cardButtons": [
+        {
+          "type": "button",
+          "label": "CANCEL",
+          "name": "Cancel",
+          "onClick": "ResetForm",
+          "display": false
+        },
+        {
+          "type": "submit",
+          "label": "SAVE",
+          "name": "Save",
+          "onClick": "",
+          "display": false
+        },
+        {
+          "type": "button",
+          "label": "Edit",
+          "name": "Edit",
+          "onClick": "EnableFormFields",
+          "display": true,
+          "icon": "icon_Edit"
+        }
+      ]
+    },
+    {
+      "cardLabel": "Locations",
+      "cardSubLabel" : "LOCATION",
+      "cardName": "locations",
+      "cardFormType": "Multi",
+      "crossRefered": true,
+      "cardFormValue": "Plain",
+      "cardContent": [
+        {
+          "type": "input",
+          "label": "Address ID",
+          "name": "addressID",
+          "isvisible": false
+        },
+        {
+          "type": "input",
+          "label": "Mapping Address ID",
+          "name": "supplierAddressMappingID",
+          "isvisible": false
+        },
+        {
+          "type": "input",
+          "label": "Address line 1",
+          "name": "addressLine1",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "required",
+              "errorMsg": "Required",
+              "isAsync": false
+            },
+            {
+              "validator": "minlength",
+              "errorMsg": "Must be minimum 5 characters long",
+              "Parameters": 5,
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Address line 2",
+          "name": "addressLine2",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Address line 3",
+          "name": "addressLine3",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "City",
+          "name": "city",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "required",
+              "errorMsg": "Required",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "State",
+          "name": "state",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "County",
+          "name": "county",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Zip",
+          "name": "zip",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "pattern",
+              "errorMsg": "Must be numeric value",
+              "Parameters": "^[0-9]*$",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Country",
+          "name": "country",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "optionRequired",
+              "errorMsg": "Required",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Status",
+          "name": "status",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "isPrimary",
+          "name": "isPrimary",
+          "isvisible": false
+        }
+      ],
+      "validators1": [
+        {
+          "validator": "addressValidator",
+          "errorMsg": "Invalid address",
+          "isAsync": true
+        }
+      ]
+    },
+    {
+      "cardLabel": "Identification",
+      "cardSubLabel" : "IDENTIFICATION",
+      "cardName": "identifications",
+      "cardFormType": "Basic",
+      "crossRefered": true,
+      "cardFormValue": "Array",
+      "cardContent": [
+        {
+          "type": "input",
+          "label": "SIC Code",
+          "name": "sicCode",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "US Federal Tax ID",
+          "name": "usFederalTaxID",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "NAICS",
+          "name": "naics",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "TIN",
+          "name": "tin",
+          "isvisible": true
+        }
+      ],
+      "validators": [
+        {
+          "validator": "addressValidator",
+          "errorMsg": "Invalid address",
+          "isAsync": true
+        }
+      ]
+    },
+    {
+      "cardLabel": "Contacts",
+      "cardSubLabel" : "CONTACT",
+      "cardName": "contacts",
+      "cardFormType": "Multi",
+      "crossRefered": true,
+      "cardFormValue": "Plain",
+      "cardContent": [
+        {
+          "type": "input",
+          "label": "Contact ID",
+          "name": "contactID",
+          "isvisible": false
+        },
+        {
+          "type": "input",
+          "label": "Mapping Contactddress ID",
+          "name": "supplierContactMappingID",
+          "isvisible": false
+        },
+        {
+          "type": "input",
+          "label": "First Name",
+          "name": "firstName",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "required",
+              "errorMsg": "Required",
+              "isAsync": false
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Middle Name",
+          "name": "middleName",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "LastName",
+          "name": "lastName",
+          "isvisible": true
+        },
+        {
+          "type": "select",
+          "label": "DefaultRole",
+          "name": "defaultRole",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Designation",
+          "name": "designation",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Phone",
+          "name": "phone",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "phoneValidator",
+              "errorMsg": "Invalid phone",
+              "isAsync": true
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Email",
+          "name": "email",
+          "isvisible": true,
+          "validators": [
+            {
+              "validator": "emailValidator",
+              "errorMsg": "Invalid email",
+              "isAsync": true
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Status",
+          "name": "status",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "isPrimary",
+          "name": "isPrimary",
+          "isvisible": false
+        }
+      ]
+    },
+    {
+      "cardLabel": "Social Media",
+      "cardSubLabel" : "SOCIAL MEDIA",
+      "cardName": "socialMedia",
+      "cardFormType": "Basic",
+      "crossRefered": true,
+      "cardFormValue": "Array",
+      "cardContent": [
+        {
+          "type": "input",
+          "label": "Website",
+          "name": "website",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Linkedin",
+          "name": "linkedin",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Instagram",
+          "name": "instagram",
+          "isvisible": true
+        },
+        {
+          "type": "input",
+          "label": "Facebook",
+          "name": "facebook",
+          "isvisible": true
+        }
+      ],
+      "validators": [
+        {
+          "validator": "addressValidator",
+          "errorMsg": "Invalid address",
+          "isAsync": true
+        }
+      ]
+    }
+  ],
+  "formButtons": [
+    {
+      "type": "button",
+      "label": "CANCEL",
+      "name": "Cancel",
+      "onClick": "ResetForm",
+      "display": false
+    },
+    {
+      "type": "submit",
+      "label": "SAVE",
+      "name": "Save",
+      "onClick": "saveForm",
+      "display": false
+    },
+    {
+      "type": "button",
+      "label": "",
+      "name": "Edit",
+      "onClick": "EnableFormFields",
+      "display": true,
+      "icon": "icon_Edit"
+    },
+    {
+      "type": "button",
+      "label": "",
+      "name": "Delete",
+      "onClick": "DeleteSelected",
+      "display": true,
+      "icon": "icon_TrashCan"
+    },
+    {
+      "type": "button",
+      "label": "ADD",
+      "name": "ADD",
+      "onClick": "addForm",
+      "display": true
+    }
+  ]
+}
